@@ -73,10 +73,50 @@ msg_tuple = (mensagem.timestamp, mensagem.data.hex(), mensagem.arbitration_id)
 - Pode ser usado na maquina local para debugar qualquer tipo de problema com o leitor_BMS ou a comunicação mesmo.
   
   
-  
-
 
 ## Comentários adicionais: 
 - Nunca nomear qualquer codigo que envolve a biblioteca python-can com as letras "can" escritas dessa exata forma ou o codigo não rodará;
 - Os endereços ip e portas devem ser alterados para os endereços adequados do laboratório;
 - Lembrar que o código foi desenvolvido em ambiente linux e portanto poderão ocorrer problemas caso apenas rodem os scripts em uma maquina windows.
+
+# Referências
+- Mais sobre esses drivers e parametros na documentação do python-can(recomendo tentativa de uso do peak-can pois temos esse no laboratório e os drivers são oficiais diferentemente da gambiarra que é necessária para usar o CANdapter): https://python-can.readthedocs.io/en/stable/interfaces.html
+- Segue a documentação dos métodos da biblioteca python-can: https://python-can.readthedocs.io/en/stable/message.html
+
+## Biblioteca Socket
+
+Comunicando com o CLP via blocos TCON + TRECV + TSEND (Eu consegui estabelecer comunicação com esse metodo, porém ele preenchia uma DB de forma descontrolada… por isso parti para o snap7 - Caso eu vá utilizar isso algum dia lembre de por algo na variavel “LEN” e também de chamar a função na main)
+
+https://youtu.be/rzl2ULtNQBU
+https://www.youtube.com/watch?v=-JoZZY71Br4&ab_channel=Hegamurl 
+
+## snap7
+https://snap7.sourceforge.net/
+Compatibilidade e configuraçã do TIA portal: https://snap7.sourceforge.net/snap7_client.html#1200_1500
+https://python-snap7.readthedocs.io/en/latest/_modules/snap7/util.html
+Explicação Areastable e Wordlen:  https://snap7.sourceforge.net/sharp7.html
+
+MODO 1: 
+
+#video 1
+https://www.youtube.com/watch?v=Ak6dZx2RnOk
+
+#video 2
+https://www.youtube.com/watch?v=2I6d6sRIl6Q&t=181s
+
+git
+https://github.com/bsarante/canalyoutube/tree/main
+
+MODO 2:
+Vídeos do Car#
+https://www.youtube.com/watch?v=xSTfmCdepyw
+https://www.youtube.com/watch?v=Eo8NyNE1bRY
+
+git
+https://github.com/Mareh07/plcwars-python-snap7
+
+
+3º visão
+https://www.youtube.com/watch?v=BKnK4AT_WKs&t=222s
+
+
