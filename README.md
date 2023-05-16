@@ -119,4 +119,9 @@ https://github.com/Mareh07/plcwars-python-snap7
 3º visão
 https://www.youtube.com/watch?v=BKnK4AT_WKs&t=222s
 
+4º Visão
+Foi o que mais deu certo
+https://www.youtube.com/watch?v=nN_475fmcKY
+
+
 
