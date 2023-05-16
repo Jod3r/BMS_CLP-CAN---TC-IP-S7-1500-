@@ -85,43 +85,43 @@ msg_tuple = (mensagem.timestamp, mensagem.data.hex(), mensagem.arbitration_id)
 
 ## Biblioteca Socket
 
-Comunicando com o CLP via blocos TCON + TRECV + TSEND (Eu consegui estabelecer comunicação com esse metodo, porém ele preenchia uma DB de forma descontrolada… por isso parti para o snap7 - Caso eu vá utilizar isso algum dia lembre de por algo na variavel “LEN” e também de chamar a função na main)
+- Comunicando com o CLP via blocos TCON + TRECV + TSEND (Eu consegui estabelecer comunicação com esse metodo, porém ele preenchia uma DB de forma descontrolada… por isso parti para o snap7 - Caso eu vá utilizar isso algum dia lembre de por algo na variavel “LEN” e também de chamar a função na main)
 
-https://youtu.be/rzl2ULtNQBU
-https://www.youtube.com/watch?v=-JoZZY71Br4&ab_channel=Hegamurl 
+- https://youtu.be/rzl2ULtNQBU
+- https://www.youtube.com/watch?v=-JoZZY71Br4&ab_channel=Hegamurl 
 
 ## snap7
-https://snap7.sourceforge.net/
-Compatibilidade e configuraçã do TIA portal: https://snap7.sourceforge.net/snap7_client.html#1200_1500
-https://python-snap7.readthedocs.io/en/latest/_modules/snap7/util.html
-Explicação Areastable e Wordlen:  https://snap7.sourceforge.net/sharp7.html
+- https://snap7.sourceforge.net/
+- Compatibilidade e configuraçã do TIA portal: https://snap7.sourceforge.net/snap7_client.html#1200_1500
+- https://python-snap7.readthedocs.io/en/latest/_modules/snap7/util.html
+- Explicação Areastable e Wordlen:  https://snap7.sourceforge.net/sharp7.html
 
 MODO 1: 
 
 #video 1
-https://www.youtube.com/watch?v=Ak6dZx2RnOk
+- https://www.youtube.com/watch?v=Ak6dZx2RnOk
 
 #video 2
-https://www.youtube.com/watch?v=2I6d6sRIl6Q&t=181s
+- https://www.youtube.com/watch?v=2I6d6sRIl6Q&t=181s
 
 git
-https://github.com/bsarante/canalyoutube/tree/main
+- https://github.com/bsarante/canalyoutube/tree/main
 
 MODO 2:
-Vídeos do Car#
-https://www.youtube.com/watch?v=xSTfmCdepyw
-https://www.youtube.com/watch?v=Eo8NyNE1bRY
+- Vídeos do Car#
+- https://www.youtube.com/watch?v=xSTfmCdepyw
+- https://www.youtube.com/watch?v=Eo8NyNE1bRY
 
 git
-https://github.com/Mareh07/plcwars-python-snap7
+- https://github.com/Mareh07/plcwars-python-snap7
 
 
 3º visão
-https://www.youtube.com/watch?v=BKnK4AT_WKs&t=222s
+- https://www.youtube.com/watch?v=BKnK4AT_WKs&t=222s
 
 4º Visão
-Foi o que mais deu certo
-https://www.youtube.com/watch?v=nN_475fmcKY
+- Foi o que mais deu certo
+- https://www.youtube.com/watch?v=nN_475fmcKY
 
 
 
