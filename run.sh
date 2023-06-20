@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Iniciar o script Python em segundo plano
-chmod +x dependencias_sim.sh
-./dependencias_sim.sh
-python3 bms_microrredes.py &
+chmod +x dependencias_real.sh
+./dependencias_real.sh
+python3 bms_clp.py &
 
 # Salvar o ID do processo do script Python em uma variável
 pid=$!
@@ -23,14 +22,11 @@ trazer_para_primeiro_plano() {
 
 # Aguardar entrada do usuário para matar o script Python, trazer para o primeiro plano ou verificar se o processo morreu
 while true; do
-  read -n 1 -p "O processo ainda está rodando.Pressione 'q' para matar, 'f' para trazer para o primeiro plano ou 's' para sair: " input
-  #uma vez que apertar f o python toma conta do terminal e é impossível retornar para interface antiga do shell.
+  read -n 1 -p "O processo ainda está rodando. Pressione 'q' para matar ou 'f' para trazer para o primeiro plano : " input
   if [[ $input == "q" ]]; then
     matar_script_python
   elif [[ $input == "f" ]]; then
     trazer_para_primeiro_plano
-  elif [[ $input == "s" ]]; then
-    exit 0
   fi
 
   # Verificar se o processo do script Python ainda está em execução
@@ -40,3 +36,4 @@ while true; do
     exit 1
   fi
 done
+

@@ -1,4 +1,3 @@
-# BMS_CLP-CAN---TC-IP-S7-1500-
 Git dedicado ao desenvolvimento do metodo de leitura para os equipamentos que comunicam via CAN no laboratorio de microrredes.
 O desenvolvimento sera dividido em duas frentes: python para ser usado enquanto a solucao no MOXA nao esta pronta e C caso seja possivel usar o moxa para controle dos BMS.
 
@@ -73,55 +72,34 @@ msg_tuple = (mensagem.timestamp, mensagem.data.hex(), mensagem.arbitration_id)
 - Pode ser usado na maquina local para debugar qualquer tipo de problema com o leitor_BMS ou a comunicação mesmo.
   
   
+  
+
 
 ## Comentários adicionais: 
 - Nunca nomear qualquer codigo que envolve a biblioteca python-can com as letras "can" escritas dessa exata forma ou o codigo não rodará;
 - Os endereços ip e portas devem ser alterados para os endereços adequados do laboratório;
 - Lembrar que o código foi desenvolvido em ambiente linux e portanto poderão ocorrer problemas caso apenas rodem os scripts em uma maquina windows.
+- nesse projeto aprendi três métodos para extrair um bytearray posso usar os seguintes métodos:
+struct.unpack('<H', valor[i : i + 2]
+int.from_bytes(value[4:6], byteorder='little')
+data_list = list(value)  # Convertendo o bytearray para lista
 
-# Referências
-- Mais sobre esses drivers e parametros na documentação do python-can(recomendo tentativa de uso do peak-can pois temos esse no laboratório e os drivers são oficiais diferentemente da gambiarra que é necessária para usar o CANdapter): https://python-can.readthedocs.io/en/stable/interfaces.html
-- Segue a documentação dos métodos da biblioteca python-can: https://python-can.readthedocs.io/en/stable/message.html
+-função verifica_falhaCAN: Precisa ser estudada...
+-Documentar certinho
 
-## Biblioteca Socket
+-Vou criar um scrip run.sh que ira rodar o dependencias_real.sh e o bms_clp (que ira fazer todo o processo)
+Para executar o script abra o terminal e navegue utilizando os comandos "cd" até a pasta do "run.sh" e execute os seguintes comandos:
 
-- Comunicando com o CLP via blocos TCON + TRECV + TSEND (Eu consegui estabelecer comunicação com esse metodo, porém ele preenchia uma DB de forma descontrolada… por isso parti para o snap7 - Caso eu vá utilizar isso algum dia lembre de por algo na variavel “LEN” e também de chamar a função na main)
+chmod +x run.sh
+./run.sh
 
-- https://youtu.be/rzl2ULtNQBU
-- https://www.youtube.com/watch?v=-JoZZY71Br4&ab_channel=Hegamurl 
+Pronto o software estará rodando. Cuidado que se houver algum tipo de falha de comunicação ou queda de energia, ele não reestabelece sozinho. (Talvez seja o caso de implementar algo nesse sentido)
 
-## snap7
-- https://snap7.sourceforge.net/
-- Compatibilidade e configuraçã do TIA portal: https://snap7.sourceforge.net/snap7_client.html#1200_1500
-- https://python-snap7.readthedocs.io/en/latest/_modules/snap7/util.html
-- Explicação Areastable e Wordlen:  https://snap7.sourceforge.net/sharp7.html
-
-MODO 1: 
-
-#video 1
-- https://www.youtube.com/watch?v=Ak6dZx2RnOk
-
-#video 2
-- https://www.youtube.com/watch?v=2I6d6sRIl6Q&t=181s
-
-git
-- https://github.com/bsarante/canalyoutube/tree/main
-
-MODO 2:
-- Vídeos do Car#
-- https://www.youtube.com/watch?v=xSTfmCdepyw
-- https://www.youtube.com/watch?v=Eo8NyNE1bRY
-
-git
-- https://github.com/Mareh07/plcwars-python-snap7
+A idéia é que o programa deixe facil a questão de segundo plano, primeiro plano e matar o processo. Mas caso feche o terminal sem matar o processo...
+use o comado "ps aux" - vai listar os processos e veja os PID quando encontrar execute "kill PID" (Valor encontrado)
+uma forma de encontrar o PID é usar o pgrep python (Ele vai listar os PIDs que tem python, você pode subir na lista e verificar se o nome bate com o script. hoje o nome é bms_clp.py possivel seja encontrado por esse nome)
 
 
-3º visão
-- https://www.youtube.com/watch?v=BKnK4AT_WKs&t=222s
-
-4º Visão
-- Foi o que mais deu certo
-- https://www.youtube.com/watch?v=nN_475fmcKY
 
 
 
